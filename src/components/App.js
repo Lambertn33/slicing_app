@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function App() {
   return (
-    <div>Application name</div>
+    <div className='text-red-900'>Application name</div>
   )
 }
