@@ -10,12 +10,16 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader'
                 },
             }, 
+            {
+                test: /\.css$/i,
+                use: ["style-loader", "css-loader"],
+            },
         ]
     },
     
@@ -23,5 +27,21 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './src/index.html'
         })
-    ]
+    ],
+
+    resolve: {
+        extensions: [".js", ".jsx", ".json", ".ts", ".tsx"],// other stuff
+        fallback: {
+            "fs": false,
+            "path": require.resolve("path-browserify"),
+            "stream": require.resolve("stream-browserify"),
+            "url": false,
+            "zlib": false,
+            "http": false,
+            "https": false,
+            "buffer": false,
+            "assert": false
+        }
+    },
+    
 }
