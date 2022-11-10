@@ -20,8 +20,8 @@ export default function Home() {
       }
     });
 
-    const handleChangeSlide = () => {
-      setSelected(1);
+    const handleChangeSlide = (slide) => {
+      setSelected(slide);
     }
 
    if (isSlidesFetching || isLinksFetching) {
@@ -31,8 +31,14 @@ export default function Home() {
    } else if (isLinksSuccess && isSlidesSuccess) {
         return (
             <div className=''>
-                <Navbar links = {links} selected={selected} />
-                <Slides slides = {slides} selected={selected} changeSlide={handleChangeSlide} />
+                <Navbar
+                 links = {links}
+                 selected={selected} />
+
+                <Slides
+                 slides = {slides}
+                 selected={selected} 
+                 changeSlide={handleChangeSlide} />
             </div>
         )
    }

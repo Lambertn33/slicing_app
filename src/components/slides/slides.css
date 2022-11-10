@@ -25,3 +25,23 @@
 .logo-dark {
     color: #bfbfbf;
 }
+
+.slide-indicator {
+    font-size: 2rem;
+}
+
+.slide-indicator.active {
+    font-size: 3rem;
+    color: dodgerblue;
+}
+.slide-indicator.dark {
+    color: #bfbfbf;
+}
+
+.carousel-element {
+    background-color: #fff;
+    color: #000;
+    opacity: .8;
+    border-top-left-radius: 1.25rem;
+    border-bottom-right-radius: 1.25rem;
+}
